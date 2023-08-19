@@ -1,0 +1,67 @@
+use std::io;
+#[derive(Debug)]
+struct Employee{
+    employee_name:String,
+    employee_id:u8,
+    email:String,
+    age:u8,
+    phone_number:String,
+}
+fn main() {
+println!("Enter a name: ");
+let mut name=String::new();
+io::stdin().read_line(&mut name).expect("Error in reading input");
+let n1:String = name.trim() .parse () .expect ("Error in parsing line");
+println!("Enter a id: ");
+let mut id=String::new();
+io::stdin().read_line(&mut id).expect("Error in reading input");
+let n2:u8 = id.trim() .parse () .expect ("Error in parsing line");
+println! ("Enter a email: ");
+let mut email=String::new();
+io::stdin().read_line(&mut email).expect("Error in reading input");
+let n3:String = email.trim() .parse () .expect ("Error in parsing line");
+println! ("Enter a age: ");
+let mut age=String::new();
+io::stdin().read_line(&mut age).expect("Error in reading input");
+let n4:u8 = age.trim() .parse () .expect ("Error in parsing line");
+println! ("Enter a number: ");
+let mut no=String::new();
+io::stdin().read_line(&mut no).expect("Error in reading input");
+let n5:String = no.trim() .parse () .expect ("Error in parsing line");
+let mut e=Employee{
+    employee_name:String::from(n1),
+    employee_id:n2,
+    email:String::from(n3),
+    age:n4,
+    phone_number:String::from(n5),
+};
+println!("{:?}",e);
+println!("Enter the employee id to be searched: ");
+let mut ids=String::new();
+io::stdin().read_line(&mut ids).expect("Error in reading input");
+let ns2:u8 = ids.trim() .parse () .expect ("Error in parsing line");
+details(ns2,&e);
+println!("Enter the employee age to be searched: ");
+let mut ages=String::new();
+io::stdin().read_line(&mut ages).expect("Error in reading input");
+let ns4:u8 = ages.trim() .parse () .expect ("Error in parsing line");
+details(ns2,&e);
+agedetails(ns4,&e);
+}
+fn details(ns2:u8,e:&Employee){
+    if e.employee_id==ns2{
+        println!("Name:{:?}",e.employee_name);
+        println!("Email:{:?}",e.email);
+        println!("Age:{:?}",e.age);
+        println!("Phone Number:{:?}",e.phone_number);
+    }
+
+}
+fn agedetails(ns4:u8,e:&Employee){
+    if e.age==ns4{
+        println!("Name:{:?}",e.employee_name);
+        println!("Employee Id:{:?}",e.employee_id);
+        println!("Email:{:?}",e.email);
+        println!("Phone Number:{:?}",e.phone_number);
+    }
+}
