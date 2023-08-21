@@ -1,0 +1,23 @@
+#[derive(Debug)]
+struct Student{
+    name:String,
+    email:String,
+    phno:String,
+    id:u8,
+}
+fn main(){
+let mut v:Vec<Student>=Vec::new();
+v.push(Student{name:String::from("Greg"),email:String::from("greg@gmail.com"),phno:String::from("6547899542"),id:01});
+v.push(Student{name:String::from("Tom"),email:String::from("tom@gmail.com"),phno:String::from("9547844123"),id:02});
+v.push(Student{name:String::from("Sam"),email:String::from("sam@gmail.com"),phno:String::from("6548775214"),id:03});
+v.push(Student{name:String::from("Sarah"),email:String::from("sarah@gmail.com"),phno:String::from("9854633215"),id:04});
+v.push(Student{name:String::from("Pam"),email:String::from("pam@gmail.com"),phno:String::from("658742215"),id:05});
+for i in &v{
+println!("{:?}",i);
+}
+let x=v.get(20);
+match x{
+    Some(e)=>println!("{:?}",e),
+    None=>println!("Invalid index"),
+    };
+}
