@@ -1,0 +1,35 @@
+use std::collections::HashMap;
+use itertools::Itertools;
+#[derive(Debug)]
+struct HM <T,U>{
+    no: T,
+    ele: U,
+}
+
+fn main() {
+    let mut map = HashMap::new();
+    map.insert(10, HM {
+    no:10,
+    ele: "c".to_string(),
+    });
+    map.insert(2, HM {
+    no:2,
+    ele: "z".to_string(),
+    });
+    map.insert(17, HM {
+    no:17,
+    ele: "v".to_string(),
+    });
+    map.insert(26, HM {
+    no:26,
+    ele: "h".to_string(),
+    });
+    map.insert(5, HM {
+    no:5,
+    ele: "a".to_string(),
+    });
+    println!("{:?}", map);
+   for key in map.keys().sorted() {
+        println!("{:?} has {:?}", key, map[key]);
+}
+}
